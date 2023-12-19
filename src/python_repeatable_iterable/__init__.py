@@ -29,7 +29,7 @@ RepeatableIterable = NewType("RepeatableIterable", Iterable)
 def get_repeatable_iterable(
     iterable: Iterable,
     safe_classes: Iterable[Type] = NoneIterable,
-):
+) -> RepeatableIterable:
     if isinstance(iterable, list):
         return iterable
     if isinstance(iterable, tuple):
