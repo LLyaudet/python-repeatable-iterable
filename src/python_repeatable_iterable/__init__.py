@@ -23,7 +23,7 @@ from typing import Iterable, NewType, Type
 from python_none_objects import NoneIterable
 
 
-RepeatableIterable = NewType(Iterable)
+RepeatableIterable = NewType("RepeatableIterable", Iterable)
 
 
 def get_repeatable_iterable(
