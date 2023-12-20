@@ -20,6 +20,7 @@ If not, see <http://www.gnu.org/licenses/>.
 ©Copyright 2023 Laurent Lyaudet
 """
 from typing import Iterable, NewType, Type
+from _collections_abc import dict_keys, dict_values, dict_items
 from python_none_objects import NoneIterable
 
 
@@ -30,12 +31,25 @@ def get_repeatable_iterable(
     iterable: Iterable,
     safe_classes: Iterable[Type] = NoneIterable,
 ) -> RepeatableIterable:
-    if isinstance(iterable, list):
+    if isinstance(
+        iterable,
+        (
+            list,
+            tuple,
+            range,
+            str,
+            bytes,
+            bytearray,
+            memoryview,
+            set,
+            frozenset,
+            dict,
+            dict_keys,
+            dict_values,
+            dict_items,
+        ),
+    ):
         return iterable
-    if isinstance(iterable, tuple):
+    if isinstance(iterable, safe_classes):
         return iterable
-    for some_class in safe_classes:
-        if isinstance(iterable, some_class):
-            return iterable
     return list(iterable)
-
