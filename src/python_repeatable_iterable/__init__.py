@@ -26,7 +26,9 @@ from python_none_objects import NoneIterable
 
 RepeatableIterable = NewType("RepeatableIterable", Iterable)
 
-
+"""
+The following function is a first attempt that conveys the intent more clearly.
+But it is not safe, see discussion just after.
 def get_repeatable_iterable(
     iterable: Iterable,
     safe_classes: Iterable[Type] = NoneIterable,
@@ -52,4 +54,66 @@ def get_repeatable_iterable(
         return iterable
     if isinstance(iterable, safe_classes):
         return iterable
+    return list(iterable)
+
+Indeed this function is not safe, since you can subclass builtins
+or other classes to make them not RepeatableIterable
+from the point of view of the semantic of this type.
+Consider the following code for example:
+>>> class MySet(set):
+...     def __init__(self, *args, **kwargs):
+...         super().__init__(*args, **kwargs)
+...         self.iteration_count = 0
+...     def __iter__(self):
+...         self.iteration_count += 1
+...         if self.iteration_count == 1:
+...             return super().__iter__()
+...         return ().__iter__()
+... 
+>>> s = MySet('abcd')
+>>> for x in s: print(x)
+... 
+b
+a
+d
+c
+>>> for x in s: print(x)
+... 
+>>> for x in s: print(x)
+... 
+>>> isinstance(s, set)
+True
+
+See here a list of builtins that can be subclassed or not:
+https://stackoverflow.com/questions/10061752/which-classes-cannot-be-subclassed
+
+"""
+
+
+def get_repeatable_iterable(
+    iterable: Iterable,
+    safe_classes: Iterable[Type] = NoneIterable,
+) -> RepeatableIterable:
+    """
+    Here is an implementation avoiding the previous problem.
+    """
+    iterable_type = type(iterable)
+    for some_class in (
+        list,
+        tuple,
+        range,
+        str,
+        bytes,
+        bytearray,
+        memoryview,
+        set,
+        frozenset,
+        dict,
+        dict_keys,
+        dict_values,
+        dict_items,
+        *safe_classes,
+    ):
+        if iterable_type is some_class:
+            return iterable
     return list(iterable)
