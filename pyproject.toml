@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "python-repeatable-iterable"
-version = "1.1.1"
+version = "2.0.0"
 description = "Add a RepeatableIterable type and a function to obtain it"
 readme = "README.md"
 authors = [
@@ -21,12 +21,15 @@ classifiers = [
 ]
 keywords = ["Python", "Iterable", "Repeatable", "RepeatableIterable"]
 dependencies = [
-   "python-none-objects==1.0.1",
+   "python-none-objects==1.1.1",
 ]
-requires-python = ">=3.0"
+requires-python = ">=3.11"
 
 [project.optional-dependencies]
-dev = ["black"]
+dev = [
+    "black",
+    "mypy",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/LLyaudet/python-repeatable-iterable"

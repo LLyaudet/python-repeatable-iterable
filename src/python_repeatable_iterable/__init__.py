@@ -19,12 +19,16 @@ If not, see <http://www.gnu.org/licenses/>.
 
 ©Copyright 2023 Laurent Lyaudet
 """
+"""
 from typing import Iterable, NewType, Type
 from _collections_abc import dict_keys, dict_values, dict_items
 from python_none_objects import NoneIterable
 
-
+A first attempt at defining the RepeatableIterable type,
+but it is not generic.
+It defines a RepeatableIterable() function that cannot be subscripted.
 RepeatableIterable = NewType("RepeatableIterable", Iterable)
+"""
 
 """
 The following function is a first attempt that conveys the intent more clearly.
@@ -89,14 +93,13 @@ https://stackoverflow.com/questions/10061752/which-classes-cannot-be-subclassed
 
 """
 
-
+"""
+This second attempt has been included in the class RepeatableIterable.
 def get_repeatable_iterable(
     iterable: Iterable,
     safe_classes: Iterable[Type] = NoneIterable,
 ) -> RepeatableIterable:
-    """
-    Here is an implementation avoiding the previous problem.
-    """
+    # Here is an implementation avoiding the previous problem.
     iterable_type = type(iterable)
     for some_class in (
         list,
@@ -117,3 +120,47 @@ def get_repeatable_iterable(
         if iterable_type is some_class:
             return iterable
     return list(iterable)
+"""
+
+from typing import cast, Iterable, Iterator, TypeVar
+from _collections_abc import dict_keys, dict_values, dict_items
+
+from python_none_objects import NoneIterable
+
+
+T = TypeVar("T")
+
+
+class RepeatableIterable(Iterable[T]):
+    def __iter__(self) -> Iterator[T]:
+        # Instances of RepeatableIterable don't actually exist.
+        return NotImplemented
+
+    def __new__(
+        cls,
+        iterable: Iterable[T],
+        safe_classes: Iterable[type[object]] = NoneIterable,
+    ) -> "RepeatableIterable[T]":
+        """
+        Here is an implementation avoiding the previous problem.
+        """
+        iterable_type = type(iterable)
+        for some_class in (
+            list,
+            tuple,
+            range,
+            str,
+            bytes,
+            bytearray,
+            memoryview,
+            set,
+            frozenset,
+            dict,
+            dict_keys,
+            dict_values,
+            dict_items,
+            *safe_classes,
+        ):
+            if iterable_type is some_class:
+                return cast("RepeatableIterable[T]", iterable)
+        return cast("RepeatableIterable[T]", list(iterable))

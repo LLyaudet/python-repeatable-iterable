@@ -24,24 +24,24 @@ foo(something)
 
 After solution 1:
 ```python3
-from python_repeatable_iterable import RepeatableIterable, get_repeatable_iterable
+from python_repeatable_iterable import RepeatableIterable
 
-def foo(iterable: RepeatableIterable):
+def foo(iterable: RepeatableIterable[object]):
     for that in iterable:
         bar(that)
     for that in iterable:
         baz(that)
 
-something_else = get_repeatable_iterable(something)
+something_else = RepeatableIterable(something)
 foo(something_else)
 ```
 
 After solution 2:
 ```python3
-from python_repeatable_iterable import get_repeatable_iterable
+from python_repeatable_iterable import RepeatableIterable
 
 def foo(iterable: Iterable):
-    iterable = get_repeatable_iterable(iterable)
+    iterable = RepeatableIterable(iterable)
     for that in iterable:
         bar(that)
     for that in iterable:
