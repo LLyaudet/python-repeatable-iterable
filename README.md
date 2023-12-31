@@ -1,6 +1,9 @@
 # python-repeatable-iterable
 
 [![pypi-version]][pypi]
+[![Downloads](https://img.shields.io/pypi/dm/python-repeatable-iterable)](https://pypistats.org/packages/python-repeatable-iterable)
+[![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 **A new type RepeatableIterable for Python and a way to obtain one instance**
 
