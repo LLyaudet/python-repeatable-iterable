@@ -53,5 +53,19 @@ def foo(iterable: Iterable):
 foo(something)
 ```
 
+If you develop something where you have no control on what another dev might give you as input,
+you have 2 possibilities:
+
+- hope for the best ;),
+- or harden your code to have less support work to do :).
+
+This applies if you dev something that is:
+
+- closed source or open source,
+- available to everyone on the Internet,
+  available only to customers or colleagues that you may personally know or not.
+
+Solution 2 above is a nice solution with a reasonable performance cost :).
+
 [pypi-version]: https://img.shields.io/pypi/v/python-repeatable-iterable.svg
 [pypi]: https://pypi.org/project/python-repeatable-iterable/
