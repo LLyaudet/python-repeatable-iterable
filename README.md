@@ -5,8 +5,15 @@
 [![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![CodeFactor](https://www.codefactor.io/repository/github/llyaudet/python-repeatable-iterable/badge/main)](https://www.codefactor.io/repository/github/llyaudet/python-repeatable-iterable/overview/main)
+[![CodeClimateMaintainability](https://api.codeclimate.com/v1/badges/89044bfd52999e4f07f6/maintainability)](https://codeclimate.com/github/LLyaudet/python-repeatable-iterable/maintainability)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c70116c2d714e3889606519937cb11d)](https://app.codacy.com/gh/LLyaudet/python-repeatable-iterable/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![GitHub top language](https://img.shields.io/github/languages/top/llyaudet/python-repeatable-iterable)
+![GitHub License](https://img.shields.io/github/license/llyaudet/python-repeatable-iterable)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/python-repeatable-iterable)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/llyaudet/python-repeatable-iterable)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/LLyaudet)](https://github.com/sponsors/LLyaudet)
 
-**A new type RepeatableIterable for Python and a way to obtain one instance**
+|     **A new type RepeatableIterable for Python and a way to obtain one instance**     |
 
 Since in Python an Iterator is an Iterable and that you cannot iterate multiple times on an iterator,
 you may encounter WTF bugs, even with type checking.
