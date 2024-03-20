@@ -17,14 +17,14 @@ You should have received a copy of the GNU Lesser General Public License
 along with python-repeatable-iterable.
 If not, see <http://www.gnu.org/licenses/>.
 
-©Copyright 2023 Laurent Lyaudet
+©Copyright 2023-2024 Laurent Lyaudet
 """
+
 import sys
 from typing import Iterable, List, Never, TypeVar
 
 sys.path.insert(0, "../src/")
 from python_repeatable_iterable import RepeatableIterable
-
 
 T1 = TypeVar("T1")
 

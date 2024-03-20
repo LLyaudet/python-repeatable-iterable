@@ -17,9 +17,8 @@ You should have received a copy of the GNU Lesser General Public License
 along with python-repeatable-iterable.
 If not, see <http://www.gnu.org/licenses/>.
 
-©Copyright 2023 Laurent Lyaudet
-"""
-"""
+©Copyright 2023-2024 Laurent Lyaudet
+-------------------------------------------------------------------------------
 from typing import Iterable, NewType, Type
 from _collections_abc import dict_keys, dict_values, dict_items
 from python_none_objects import NoneIterable
@@ -28,9 +27,9 @@ A first attempt at defining the RepeatableIterable type,
 but it is not generic.
 It defines a RepeatableIterable() function that cannot be subscripted.
 RepeatableIterable = NewType("RepeatableIterable", Iterable)
-"""
 
-"""
+-------------------------------------------------------------------------------
+
 The following function is a first attempt that conveys the intent more clearly.
 But it is not safe, see discussion just after.
 def get_repeatable_iterable(
@@ -91,9 +90,8 @@ True
 See here a list of builtins that can be subclassed or not:
 https://stackoverflow.com/questions/10061752/which-classes-cannot-be-subclassed
 
-"""
+-------------------------------------------------------------------------------
 
-"""
 This second attempt has been included in the class RepeatableIterable.
 def get_repeatable_iterable(
     iterable: Iterable,
@@ -122,11 +120,10 @@ def get_repeatable_iterable(
     return list(iterable)
 """
 
-from typing import cast, Iterable, Iterator, TypeVar
-from _collections_abc import dict_keys, dict_values, dict_items
+from typing import Iterable, Iterator, TypeVar, cast
+from _collections_abc import dict_items, dict_keys, dict_values
 
 from python_none_objects import NoneIterable
-
 
 T = TypeVar("T")
 
