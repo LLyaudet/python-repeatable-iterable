@@ -129,6 +129,12 @@ T = TypeVar("T")
 
 
 class RepeatableIterable(Iterable[T]):
+    """
+    An asbtract class that is here to define a type and
+    cast other objects to this type if possible in its __new__ method.
+    """
+
+    # pylint: disable=non-iterator-returned
     def __iter__(self) -> Iterator[T]:
         # Instances of RepeatableIterable don't actually exist.
         return NotImplemented
