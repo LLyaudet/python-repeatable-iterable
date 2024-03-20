@@ -24,12 +24,21 @@ import sys
 from typing import Iterable, List, Never, TypeVar
 
 sys.path.insert(0, "../src/")
+# pylint: disable=wrong-import-position
 from python_repeatable_iterable import RepeatableIterable
 
+# pylint: disable=invalid-name
 T1 = TypeVar("T1")
 
 
-def foo(x: RepeatableIterable[List[T1]]) -> List[T1]:
+def test_arg_to_return_typing(
+    x: RepeatableIterable[List[T1]],
+) -> List[T1]:
+    """
+    Check that mypy follows the types
+    between the argument and the return of the function
+    for the type of the content of the list.
+    """
     result = []
     for y in x:
         result.extend(y)
@@ -38,18 +47,34 @@ def foo(x: RepeatableIterable[List[T1]]) -> List[T1]:
     return result
 
 
-def bar(x: Iterable[List[T1]]) -> List[T1]:
-    return foo(RepeatableIterable(x))
+def test_arg_to_return_via_call_typing(
+    x: Iterable[List[T1]],
+) -> List[T1]:
+    """
+    Check that mypy follows the types
+    between the argument and the return of the function
+    for the type of the content of the list
+    with indirections.
+    """
+    return test_arg_to_return_typing(RepeatableIterable(x))
 
 
 a: List[List[Never]] = [[], []]
-print(bar(a))
+print(test_arg_to_return_via_call_typing(a))
 
 b = (x for x in a)
-print(bar(b))
+print(test_arg_to_return_via_call_typing(b))
 
 
-def baz(x: RepeatableIterable[List[T1]]) -> RepeatableIterable[T1]:
+def test_arg_to_return_via_cast_typing(
+    x: RepeatableIterable[List[T1]],
+) -> RepeatableIterable[T1]:
+    """
+    Check that mypy follows the types
+    between the argument and the return of the function
+    for the type of the content of the list
+    with a final cast.
+    """
     result = []
     for y in x:
         result.extend(y)

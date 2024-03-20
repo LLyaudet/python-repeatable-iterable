@@ -2,8 +2,10 @@
 
 [![pypi-version]][pypi]
 [![Downloads](https://img.shields.io/pypi/dm/python-repeatable-iterable)](https://pypistats.org/packages/python-repeatable-iterable)
-[![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
 [![CodeFactor](https://www.codefactor.io/repository/github/llyaudet/python-repeatable-iterable/badge/main)](https://www.codefactor.io/repository/github/llyaudet/python-repeatable-iterable/overview/main)
 [![CodeClimateMaintainability](https://api.codeclimate.com/v1/badges/89044bfd52999e4f07f6/maintainability)](https://codeclimate.com/github/LLyaudet/python-repeatable-iterable/maintainability)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1c70116c2d714e3889606519937cb11d)](https://app.codacy.com/gh/LLyaudet/python-repeatable-iterable/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
