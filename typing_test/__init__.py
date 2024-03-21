@@ -24,10 +24,10 @@ import sys
 from typing import Iterable, List, Never, TypeVar
 
 sys.path.insert(0, "../src/")
-# pylint: disable=wrong-import-position
+# pylint: disable-next=wrong-import-position
 from python_repeatable_iterable import RepeatableIterable
 
-# pylint: disable=invalid-name
+# pylint: disable-next=invalid-name
 T1 = TypeVar("T1")
 
 

@@ -21,7 +21,7 @@ classifiers = [
 ]
 keywords = ["Python", "Iterable", "Repeatable", "RepeatableIterable"]
 dependencies = [
-   "python-none-objects==1.1.4",
+   "python-none-objects==1.1.5",
 ]
 requires-python = ">=3.11"
 

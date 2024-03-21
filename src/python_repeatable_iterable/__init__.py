@@ -134,7 +134,7 @@ class RepeatableIterable(Iterable[T]):
     cast other objects to this type if possible in its __new__ method.
     """
 
-    # pylint: disable=non-iterator-returned
+    # pylint: disable-next=non-iterator-returned
     def __iter__(self) -> Iterator[T]:
         # Instances of RepeatableIterable don't actually exist.
         return NotImplemented
