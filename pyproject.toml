@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "python-repeatable-iterable"
-version = "2.1.1"
+version = "2.1.2"
 description = "Add a RepeatableIterable type and a function to obtain it"
 readme = "README.md"
 authors = [
