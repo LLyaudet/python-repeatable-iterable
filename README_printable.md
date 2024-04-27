@@ -84,47 +84,66 @@ This applies if you dev something that is:
 Solution 2 above is a nice solution
 with a reasonable performance cost :).
 
-[PyPI-version-badge]: https://img.shields.io/pypi/v/python-repeatable-iterable.svg
+[PyPI-version-badge]: https://img.shields.io/pypi/v/\
+python-repeatable-iterable.svg
 
-[PyPI-package-page]: https://pypi.org/project/python-repeatable-iterable/
+[PyPI-package-page]: https://pypi.org/project/\
+python-repeatable-iterable/
 
-[Downloads-badge]: https://img.shields.io/pypi/dm/python-repeatable-iterable
+[Downloads-badge]: https://img.shields.io/pypi/dm/\
+python-repeatable-iterable
 
-[PyPIStats-package-page]: https://pypistats.org/packages/python-repeatable-iterable
+[PyPIStats-package-page]: https://pypistats.org/packages/\
+python-repeatable-iterable
 
-[Code-style:black:badge]: https://img.shields.io/badge/code%20style-black-000000.svg
+[Code-style:black:badge]: https://img.shields.io/badge/\
+code%20style-black-000000.svg
 
 [Black-GitHub.com]: https://github.com/psf/black
 
-[Imports:isort:badge]: https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336
+[Imports:isort:badge]: https://img.shields.io/badge/\
+%20imports-isort-%231674b1?style=flat&labelColor=ef8336
 
 [Isort-GitHub.io]: https://pycqa.github.io/isort/
 
-[Typecheck:mypy:badge]: https://www.mypy-lang.org/static/mypy_badge.svg
+[Typecheck:mypy:badge]: https://www.mypy-lang.org/static/\
+mypy_badge.svg
 
 [Typecheck-mypy-lang.org]: https://mypy-lang.org/
 
-[Linting:pylint:badge]: https://img.shields.io/badge/linting-pylint-yellowgreen
+[Linting:pylint:badge]: https://img.shields.io/badge/\
+linting-pylint-yellowgreen
 
 [Pylint-GitHub.com]: https://github.com/pylint-dev/pylint
 
-[CodeFactor-badge]: https://www.codefactor.io/repository/github/llyaudet/python-repeatable-iterable/badge/main
+[CodeFactor-badge]: https://www.codefactor.io/repository/github/\
+llyaudet/python-repeatable-iterable/badge/main
 
-[CodeFactor-package-page]: https://www.codefactor.io/repository/github/llyaudet/python-repeatable-iterable/overview/main
+[CodeFactor-package-page]: https://www.codefactor.io/repository/\
+github/llyaudet/python-repeatable-iterable/overview/main
 
-[CodeClimateMaintainability-badge]: https://api.codeclimate.com/v1/badges/89044bfd52999e4f07f6/maintainability
+[CodeClimateMaintainability-badge]: https://api.codeclimate.com/v1/\
+badges/89044bfd52999e4f07f6/maintainability
 
-[CodeClimateM13y-package-page]: https://codeclimate.com/github/LLyaudet/python-repeatable-iterable/maintainability
+[CodeClimateM13y-package-page]: https://codeclimate.com/github/\
+LLyaudet/python-repeatable-iterable/maintainability
 
-[Codacy-badge]: https://app.codacy.com/project/badge/Grade/1c70116c2d714e3889606519937cb11d
+[Codacy-badge]: https://app.codacy.com/project/badge/Grade/\
+1c70116c2d714e3889606519937cb11d
 
-[Codacy-package-page]: https://app.codacy.com/gh/LLyaudet/python-repeatable-iterable/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
+[Codacy-package-page]: https://app.codacy.com/gh/LLyaudet/\
+python-repeatable-iterable/dashboard?utm_source=gh\
+&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
 
-[GitHub-top-language-badge]: https://img.shields.io/github/languages/top/llyaudet/python-repeatable-iterable
+[GitHub-top-language-badge]: https://img.shields.io/github/\
+languages/top/llyaudet/python-repeatable-iterable
 
-[GitHub-license-badge]: https://img.shields.io/github/license/llyaudet/python-repeatable-iterable
+[GitHub-license-badge]: https://img.shields.io/github/license/\
+llyaudet/python-repeatable-iterable
 
-[PyPI-python-version-badge]: https://img.shields.io/pypi/pyversions/python-repeatable-iterable
+[PyPI-python-version-badge]: https://img.shields.io/pypi/pyversions/\
+python-repeatable-iterable
 
-[GitHub-code-size-in-bytes-badge]: https://img.shields.io/github/languages/code-size/llyaudet/python-repeatable-iterable
+[GitHub-code-size-in-bytes-badge]: https://img.shields.io/github/\
+languages/code-size/llyaudet/python-repeatable-iterable
 

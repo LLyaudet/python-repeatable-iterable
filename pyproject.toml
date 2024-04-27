@@ -7,14 +7,19 @@ build-backend = "hatchling.build"
 [project]
 name = "python-repeatable-iterable"
 version = "2.1.2"
-description = "Add a RepeatableIterable type and a function to obtain it"
+description = """\
+Add a RepeatableIterable type and a function to obtain it\
+"""
 readme = "README.md"
 authors = [
     { name = "Laurent Lyaudet", email = "laurent.lyaudet@gmail.com" },
 ]
 license = { file = "COPYING.LESSER" }
 classifiers = [
-    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    """\
+License :: OSI Approved :: \
+GNU Lesser General Public License v3 or later (LGPLv3+)\
+""",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
@@ -35,7 +40,9 @@ dev = [
 
 [project.urls]
 "Homepage" = "https://github.com/LLyaudet/python-repeatable-iterable"
-"Bug Tracker" = "https://github.com/LLyaudet/python-repeatable-iterable/issues"
+"Bug Tracker" = """\
+https://github.com/LLyaudet/python-repeatable-iterable/issues\
+"""
 
 [tool.black]
 line-length = 70

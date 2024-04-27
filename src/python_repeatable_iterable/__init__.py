@@ -2,23 +2,26 @@
 This file is part of python-repeatable-iterable library.
 
 python-repeatable-iterable is free software:
-you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
+you can redistribute it and/or modify it under the terms
+of the GNU Lesser General Public License
 as published by the Free Software Foundation,
 either version 3 of the License,
 or (at your option) any later version.
 
-python-repeatable-iterable is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
+python-repeatable-iterable is distributed in the hope
+that it will be useful,
+but WITHOUT ANY WARRANTY;
+without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 See the GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public License
+You should have received a copy of
+the GNU Lesser General Public License
 along with python-repeatable-iterable.
 If not, see <http://www.gnu.org/licenses/>.
 
 ©Copyright 2023-2024 Laurent Lyaudet
--------------------------------------------------------------------------------
+----------------------------------------------------------------------
 from typing import Iterable, NewType, Type
 from _collections_abc import dict_keys, dict_values, dict_items
 from python_none_objects import NoneIterable
@@ -28,9 +31,10 @@ but it is not generic.
 It defines a RepeatableIterable() function that cannot be subscripted.
 RepeatableIterable = NewType("RepeatableIterable", Iterable)
 
--------------------------------------------------------------------------------
+----------------------------------------------------------------------
 
-The following function is a first attempt that conveys the intent more clearly.
+The following function is a first attempt
+that conveys the intent more clearly.
 But it is not safe, see discussion just after.
 def get_repeatable_iterable(
     iterable: Iterable,
@@ -88,9 +92,10 @@ c
 True
 
 See here a list of builtins that can be subclassed or not:
-https://stackoverflow.com/questions/10061752/which-classes-cannot-be-subclassed
+https://stackoverflow.com/questions/10061752
+/which-classes-cannot-be-subclassed
 
--------------------------------------------------------------------------------
+----------------------------------------------------------------------
 
 This second attempt has been included in the class RepeatableIterable.
 def get_repeatable_iterable(
@@ -147,6 +152,7 @@ class RepeatableIterable(Iterable[T]):
         """
         Here is an implementation avoiding the previous problem.
         """
+
         iterable_type = type(iterable)
         for some_class in (
             list,

@@ -2,18 +2,21 @@
 This file is part of python-repeatable-iterable library.
 
 python-repeatable-iterable is free software:
-you can redistribute it and/or modify it
-under the terms of the GNU Lesser General Public License
+you can redistribute it and/or modify it under the terms
+of the GNU Lesser General Public License
 as published by the Free Software Foundation,
 either version 3 of the License,
 or (at your option) any later version.
 
-python-repeatable-iterable is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
+python-repeatable-iterable is distributed in the hope
+that it will be useful,
+but WITHOUT ANY WARRANTY;
+without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 See the GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public License
+You should have received a copy of
+the GNU Lesser General Public License
 along with python-repeatable-iterable.
 If not, see <http://www.gnu.org/licenses/>.
 
@@ -39,6 +42,7 @@ def test_arg_to_return_typing(
     between the argument and the return of the function
     for the type of the content of the list.
     """
+
     result = []
     for y in x:
         result.extend(y)
@@ -56,6 +60,7 @@ def test_arg_to_return_via_call_typing(
     for the type of the content of the list
     with indirections.
     """
+
     return test_arg_to_return_typing(RepeatableIterable(x))
 
 
@@ -75,6 +80,7 @@ def test_arg_to_return_via_cast_typing(
     for the type of the content of the list
     with a final cast.
     """
+
     result = []
     for y in x:
         result.extend(y)
