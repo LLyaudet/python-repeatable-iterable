@@ -15,7 +15,8 @@
 ![GitHub-code-size-in-bytes-badge]
 
 | **A new type RepeatableIterable for Python** |
-:     **and a way to obtain one instance**     :
+|:--------------------------------------------:|
+|     **and a way to obtain one instance**     |
 
 
 Since in Python an Iterator is an Iterable
