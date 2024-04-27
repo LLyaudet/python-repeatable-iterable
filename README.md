@@ -13,7 +13,6 @@
 ![GitHub License](https://img.shields.io/github/license/llyaudet/python-repeatable-iterable)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/python-repeatable-iterable)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/llyaudet/python-repeatable-iterable)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/LLyaudet)](https://github.com/sponsors/LLyaudet)
 
 |     **A new type RepeatableIterable for Python and a way to obtain one instance**     |
 
