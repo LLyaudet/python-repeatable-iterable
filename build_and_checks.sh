@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This file is part of python-repeatable-iterable library.
 #
 # python-repeatable-iterable is free software:
@@ -22,7 +22,17 @@
 #
 # ©Copyright 2023-2024 Laurent Lyaudet
 
+source ./wget_sha512.sh
+
+personal_github="https://raw.githubusercontent.com/LLyaudet/"
+
 echo "Building README.md"
+script="$personal_github""DevOrSysAdminScripts/main/build_readme.sh"
+correct_sha512="a7705592c14c7709f8762967f5c5d1c98d27b8ab97fe2aaa73302"
+correct_sha512+="5bf641eb48c6a0e6a38c44bcbe155777290f9b837f0d059dcedb"
+correct_sha512+="68b64d27677b3cdb663624c"
+wget_sha512 ./build_readme.sh "$script" "$correct_sha512"
+chmod +x ./build_readme.sh
 ./build_readme.sh
 
 echo "Running isort"
@@ -33,33 +43,30 @@ black .
 
 echo "Running pylint"
 pylint src/python_repeatable_iterable/
+pylint typing_test/
 
 echo "Running mypy"
 mypy .
 
 shopt -s globstar
 
-too_long_code_lines() {
-  grep -r '.\{71\}' -- **/*.c
-  grep -r '.\{71\}' -- **/*.css
-  grep -r '.\{71\}' -- **/*.h
-  grep -r '.\{71\}' -- **/*.htm
-  grep -r '.\{71\}' -- **/*.html
-  grep -r '.\{71\}' -- **/*.js
-  grep -r '.\{71\}' -- **/*.json
-  grep -r '.\{71\}' -- **/*.md
-  grep -r '.\{71\}' -- **/*.php
-  grep -r '.\{71\}' -- **/*.py
-  grep -r '.\{71\}' -- **/*.sql
-  grep -r '.\{71\}' -- **/*.tex
-  grep -r '.\{71\}' -- **/*.toml
-  grep -r '.\{71\}' -- **/*.ts
-  grep -r '.\{71\}' -- **/*.txt
-  grep -r '.\{71\}' -- **/*.yml
-  grep -r '.\{71\}' -- **/COPYING
-  grep -r '.\{71\}' -- **/COPYING.LESSER
-}
-
 echo "Analyzing too long lines"
+script="$personal_github"
+script+="DevOrSysAdminScripts/main/too_long_code_lines.sh"
+correct_sha512="eab26337506d6fabdea227c4b584391cc4a728e6b852be2232a7e"
+correct_sha512+="4d21261eb356df77257b0ea7152c9587ce89a963732fc644caf1"
+correct_sha512+="38c21ee51932e6fa6168bf9"
+wget_sha512 ./too_long_code_lines.sh "$script" "$correct_sha512"
+source ./too_long_code_lines.sh
 too_long_code_lines
 
+echo "Analyzing shell scripts beginning"
+script="$personal_github"
+script+="DevOrSysAdminScripts/main/check_shell_scripts_beginning.sh"
+correct_sha512="ea0876c47a328eca96fae36f9b25a5cab01987178f23c3f71f4e8"
+correct_sha512+="b6dcf8dd24e47727265b102c3138a38d1f3bb9c116675a437190"
+correct_sha512+="8b1bc7ae24b79e9bd5a8715"
+wget_sha512 ./check_shell_scripts_beginning.sh "$script"\
+  "$correct_sha512"
+source ./check_shell_scripts_beginning.sh
+check_shell_scripts_beginning

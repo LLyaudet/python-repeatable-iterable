@@ -14,8 +14,13 @@ readme = "README.md"
 authors = [
     { name = "Laurent Lyaudet", email = "laurent.lyaudet@gmail.com" },
 ]
+maintainers = [
+    { name = "Laurent Lyaudet", email = "laurent.lyaudet@gmail.com" },
+]
 license = { file = "COPYING.LESSER" }
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
     """\
 License :: OSI Approved :: \
 GNU Lesser General Public License v3 or later (LGPLv3+)\
@@ -23,6 +28,8 @@ GNU Lesser General Public License v3 or later (LGPLv3+)\
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
 ]
 keywords = ["Python", "Iterable", "Repeatable", "RepeatableIterable"]
 dependencies = [
