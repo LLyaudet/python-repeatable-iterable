@@ -42,7 +42,6 @@ def test_arg_to_return_typing(
     between the argument and the return of the function
     for the type of the content of the list.
     """
-
     result = []
     for y in x:
         result.extend(y)
@@ -60,7 +59,6 @@ def test_arg_to_return_via_call_typing(
     for the type of the content of the list
     with indirections.
     """
-
     return test_arg_to_return_typing(RepeatableIterable(x))
 
 
@@ -80,7 +78,6 @@ def test_arg_to_return_via_cast_typing(
     for the type of the content of the list
     with a final cast.
     """
-
     result = []
     for y in x:
         result.extend(y)

@@ -152,7 +152,6 @@ class RepeatableIterable(Iterable[T]):
         """
         Here is an implementation avoiding the previous problem.
         """
-
         iterable_type = type(iterable)
         for some_class in (
             list,
