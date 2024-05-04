@@ -18,7 +18,7 @@ See the GNU Lesser General Public License for more details.
 You should have received a copy of
 the GNU Lesser General Public License
 along with python-repeatable-iterable.
-If not, see <http://www.gnu.org/licenses/>.
+If not, see <https://www.gnu.org/licenses/>.
 
 ©Copyright 2023-2024 Laurent Lyaudet
 ----------------------------------------------------------------------
