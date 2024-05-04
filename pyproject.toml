@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "python-repeatable-iterable"
-version = "2.1.6"
+version = "2.1.7"
 description = """\
 Add a RepeatableIterable type and a function to obtain it\
 """
@@ -33,7 +33,7 @@ GNU Lesser General Public License v3 or later (LGPLv3+)\
 ]
 keywords = ["Python", "Iterable", "Repeatable", "RepeatableIterable"]
 dependencies = [
-   "python-none-objects==1.1.5",
+   "python-none-objects==1.1.10",
 ]
 requires-python = ">=3.11"
 
