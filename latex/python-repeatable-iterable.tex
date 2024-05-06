@@ -1,0 +1,331 @@
+%!/usr/bin/env bash
+% This file is part of python-repeatable-iterable library.
+%
+% python-repeatable-iterable is free software:
+% you can redistribute it and/or modify it under the terms
+% of the GNU Lesser General Public License
+% as published by the Free Software Foundation,
+% either version 3 of the License,
+% or (at your option) any later version.
+%
+% python-repeatable-iterable is distributed in the hope
+% that it will be useful,
+% but WITHOUT ANY WARRANTY;
+% without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+% See the GNU Lesser General Public License for more details.
+%
+% You should have received a copy of
+% the GNU Lesser General Public License
+% along with python-repeatable-iterable.
+% If not, see <https://www.gnu.org/licenses/>.
+%
+% ©Copyright 2023-2024 Laurent Lyaudet
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[pdftex]{hyperref}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage[round]{natbib}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{times}
+\usepackage{ifpdf}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{pmboxdraw}
+\usepackage{fancyvrb}
+
+% *** les environnements ***
+%\theoremstyle{break}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{openproblem}[definition]{Open problem}
+
+\begin{document}
+
+\author{
+  Laurent Lyaudet\\
+  \url{https://lyaudet.eu/laurent/}\\
+  laurent.lyaudet@gmail.com
+}
+\title{python-repeatable-iterable}
+
+\maketitle
+\begin{abstract}
+A new type RepeatableIterable for Python
+and a way to obtain one instance
+\end{abstract}
+
+Current version: 2024-05-06
+
+Current number of commits: 33
+
+Current git SHA1: e4b32492802274eed61431b62f4894682606b998
+
+Code lines: 1830 total lines, 1552 not empty lines, 278 empty lines.
+
+\section{Files tree}
+\label{section:tree}
+
+\begin{verbatim}
+.
+├── build_and_checks.sh
+├── CONTRIBUTORS.md
+├── COPYING
+├── COPYING.LESSER
+├── dist
+│   ├── python_repeatable_iterable-1.0.0-py3-none-any.whl
+│   ├── python_repeatable_iterable-1.0.0.tar.gz
+│   ├── python_repeatable_iterable-1.0.1-py3-none-any.whl
+│   ├── python_repeatable_iterable-1.0.1.tar.gz
+│   ├── python_repeatable_iterable-1.1.0-py3-none-any.whl
+│   ├── python_repeatable_iterable-1.1.0.tar.gz
+│   ├── python_repeatable_iterable-1.1.1-py3-none-any.whl
+│   ├── python_repeatable_iterable-1.1.1.tar.gz
+│   ├── python_repeatable_iterable-2.0.0-py3-none-any.whl
+│   ├── python_repeatable_iterable-2.0.0.tar.gz
+│   ├── python_repeatable_iterable-2.1.0-py3-none-any.whl
+│   ├── python_repeatable_iterable-2.1.0.tar.gz
+│   ├── python_repeatable_iterable-2.1.1-py3-none-any.whl
+│   ├── python_repeatable_iterable-2.1.1.tar.gz
+│   ├── python_repeatable_iterable-2.1.2-py3-none-any.whl
+│   ├── python_repeatable_iterable-2.1.2.tar.gz
+│   ├── python_repeatable_iterable-2.1.3-py3-none-any.whl
+│   ├── python_repeatable_iterable-2.1.3.tar.gz
+│   ├── python_repeatable_iterable-2.1.4-py3-none-any.whl
+│   ├── python_repeatable_iterable-2.1.4.tar.gz
+│   ├── python_repeatable_iterable-2.1.5-py3-none-any.whl
+│   ├── python_repeatable_iterable-2.1.5.tar.gz
+│   ├── python_repeatable_iterable-2.1.6-py3-none-any.whl
+│   ├── python_repeatable_iterable-2.1.6.tar.gz
+│   ├── python_repeatable_iterable-2.1.7-py3-none-any.whl
+│   └── python_repeatable_iterable-2.1.7.tar.gz
+├── .gitignore
+├── latex
+│   ├── python-repeatable-iterable.tex
+│   └── python-repeatable-iterable.tex.tpl
+├── pyproject.toml
+├── python-repeatable-iterable.pdf
+├── README.md
+├── README.md.tpl
+├── src
+│   └── python_repeatable_iterable
+│       ├── __init__.py
+│       └── py.typed
+├── typing_test
+│   └── __init__.py
+└── wget_sha512.sh
+
+6 directories, 41 files
+\end{verbatim}
+
+\begin{verbatim}
+[4.0K May  6 04:08]  ./
+├── [1.6K May  6 04:07]  build_and_checks.sh*
+├── [ 201 May  6 04:07]  CONTRIBUTORS.md
+├── [ 34K May  2  2018]  COPYING
+├── [7.5K Jul 24  2018]  COPYING.LESSER
+├── [4.0K May  4 03:08]  dist/
+│   ├── [ 20K Dec 20 00:26]
+│   │ python_repeatable_iterable-1.0.0-py3-none-any.whl
+│   ├── [ 16K Dec 20 00:26]  python_repeatable_iterable-1.0.0.tar.gz
+│   ├── [ 20K Dec 20 00:37]
+│   │ python_repeatable_iterable-1.0.1-py3-none-any.whl
+│   ├── [ 16K Dec 20 00:37]  python_repeatable_iterable-1.0.1.tar.gz
+│   ├── [ 20K Dec 20 11:48]
+│   │ python_repeatable_iterable-1.1.0-py3-none-any.whl
+│   ├── [ 16K Dec 20 11:48]  python_repeatable_iterable-1.1.0.tar.gz
+│   ├── [ 21K Dec 20 16:42]
+│   │ python_repeatable_iterable-1.1.1-py3-none-any.whl
+│   ├── [ 17K Dec 20 16:42]  python_repeatable_iterable-1.1.1.tar.gz
+│   ├── [ 21K Dec 30 23:32]
+│   │ python_repeatable_iterable-2.0.0-py3-none-any.whl
+│   ├── [ 17K Dec 30 23:32]  python_repeatable_iterable-2.0.0.tar.gz
+│   ├── [ 21K Jan 12 01:05]
+│   │ python_repeatable_iterable-2.1.0-py3-none-any.whl
+│   ├── [ 18K Jan 12 01:05]  python_repeatable_iterable-2.1.0.tar.gz
+│   ├── [ 22K Mar 20 02:59]
+│   │ python_repeatable_iterable-2.1.1-py3-none-any.whl
+│   ├── [ 19K Mar 20 02:59]  python_repeatable_iterable-2.1.1.tar.gz
+│   ├── [ 22K Mar 21 20:48]
+│   │ python_repeatable_iterable-2.1.2-py3-none-any.whl
+│   ├── [ 19K Mar 21 20:48]  python_repeatable_iterable-2.1.2.tar.gz
+│   ├── [ 22K Apr 28 00:04]
+│   │ python_repeatable_iterable-2.1.3-py3-none-any.whl
+│   ├── [ 20K Apr 28 00:04]  python_repeatable_iterable-2.1.3.tar.gz
+│   ├── [ 22K May  2 00:44]
+│   │ python_repeatable_iterable-2.1.4-py3-none-any.whl
+│   ├── [ 21K May  2 00:44]  python_repeatable_iterable-2.1.4.tar.gz
+│   ├── [ 22K May  3 03:58]
+│   │ python_repeatable_iterable-2.1.5-py3-none-any.whl
+│   ├── [ 21K May  3 03:58]  python_repeatable_iterable-2.1.5.tar.gz
+│   ├── [ 22K May  3 04:17]
+│   │ python_repeatable_iterable-2.1.6-py3-none-any.whl
+│   ├── [ 21K May  3 04:17]  python_repeatable_iterable-2.1.6.tar.gz
+│   ├── [ 22K May  4 03:08]
+│   │ python_repeatable_iterable-2.1.7-py3-none-any.whl
+│   └── [ 21K May  4 03:08]  python_repeatable_iterable-2.1.7.tar.gz
+├── [  31 May  4 03:03]  .gitignore
+├── [4.0K May  6 04:08]  latex/
+│   ├── [4.1K May  6 04:08]  python-repeatable-iterable.tex
+│   └── [4.0K May  5 16:39]  python-repeatable-iterable.tex.tpl
+├── [1.4K May  6 04:06]  pyproject.toml
+├── [ 80K May  6 04:08]  python-repeatable-iterable.pdf
+├── [4.3K May  6 04:08]  README.md
+├── [4.3K Apr 27 23:57]  README.md.tpl
+├── [4.0K Dec 19 23:50]  src/
+│   └── [4.0K May  6 04:08]  python_repeatable_iterable/
+│       ├── [4.8K May  6 04:08]  __init__.py
+│       └── [   0 Dec 30 23:19]  py.typed
+├── [4.0K May  6 04:08]  typing_test/
+│   └── [2.2K May  6 04:08]  __init__.py
+└── [1.1K May  4 03:04]  wget_sha512.sh
+
+6 directories, 41 files
+\end{verbatim}
+
+\section{Listing of files}
+\label{section:listing}
+
+The following source code is covered by LGPLv3+.
+The text of the license is available at:
+\url{https://www.gnu.org/licenses/}.
+The git repository of this source code is also available at:
+\url{https://github.com/LLyaudet/python-repeatable-iterable/}.
+
+
+\subsection{
+  build\_and\_checks.sh
+}
+\label{
+  build_and_checkssh
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  build_and_checks.sh
+}
+
+
+\subsection{
+  CONTRIBUTORS.md
+}
+\label{
+  CONTRIBUTORSmd
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  CONTRIBUTORS.md
+}
+
+
+\subsection{
+  .gitignore
+}
+\label{
+  gitignore
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  .gitignore
+}
+
+
+\subsection{
+  latex/python-repeatable-iterable.tex.tpl
+}
+\label{
+  latex:python-repeatable-iterabletextpl
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  latex/python-repeatable-iterable.tex.tpl
+}
+
+
+\subsection{
+  pyproject.toml
+}
+\label{
+  pyprojecttoml
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  pyproject.toml
+}
+
+
+\subsection{
+  README.md.tpl
+}
+\label{
+  READMEmdtpl
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  README.md.tpl
+}
+
+
+\subsection{
+  src/python\_repeatable\_iterable/\_\_init\_\_.py
+}
+\label{
+  src:python_repeatable_iterable:__init__py
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  src/python_repeatable_iterable/__init__.py
+}
+
+
+\subsection{
+  src/python\_repeatable\_iterable/py.typed
+}
+\label{
+  src:python_repeatable_iterable:pytyped
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  src/python_repeatable_iterable/py.typed
+}
+
+
+\subsection{
+  typing\_test/\_\_init\_\_.py
+}
+\label{
+  typing_test:__init__py
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  typing_test/__init__.py
+}
+
+
+\subsection{
+  wget\_sha512.sh
+}
+\label{
+  wget_sha512sh
+}
+
+\VerbatimInput[numbers=left,xleftmargin=-5mm]{
+  wget_sha512.sh
+}
+
+
+Merci Dieu ! Merci P\`ere ! Merci Seigneur ! Merci Saint Esprit !
+
+\end{document}
